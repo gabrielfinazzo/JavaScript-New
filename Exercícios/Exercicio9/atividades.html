@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+        nome = prompt('Digite o seu nome: ')
+        altura = parseFloat(prompt('Digite a sua altura emcentímetros: '))
+        peso = parseFloat(prompt('Digite o seu peso: '))
+        m = 0
+        altura /= 100
+        m = peso / (altura * altura)
+
+
+        if (m < 16) {
+            document.write('Baixo peso muito grave')
+        } else if (m <= 16.99) {
+            document.write('Baixa peso grave')
+        } else if (m <= 18.49) {
+            document.write('Baixo Peso')
+        } else if (m <=24.99) {
+            document.write('Peso normal')
+        } else if (m <=29.99) {
+            document.write('Sobrepeso')
+        } else if (m <= 34.99) {
+            document.write('Obesidade grau I')
+        } else if (m <= 39.99) {
+            document.write('Obesidade grau II')
+        } else {
+            document.write('Obesidade grau III')
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
