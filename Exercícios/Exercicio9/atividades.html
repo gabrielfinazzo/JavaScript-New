@@ -15,22 +15,24 @@
 
 
         if (m < 16) {
-            document.write('Baixo peso muito grave')
+            classificacao = 'Baixo peso muito grave'
         } else if (m <= 16.99) {
-            document.write('Baixa peso grave')
+            classificacao = 'Baixa peso grave'
         } else if (m <= 18.49) {
-            document.write('Baixo Peso')
+            classificacao = 'Baixo Peso'
         } else if (m <=24.99) {
-            document.write('Peso normal')
+            classificacao = 'Peso normal'
         } else if (m <=29.99) {
-            document.write('Sobrepeso')
+            classificacao = 'Sobrepeso'
         } else if (m <= 34.99) {
-            document.write('Obesidade grau I')
+            classificacao = 'Obesidade grau I'
         } else if (m <= 39.99) {
-            document.write('Obesidade grau II')
+            classificacao ='Obesidade grau II'
         } else {
-            document.write('Obesidade grau III')
+            classificacao ='Obesidade grau III'
         }
+
+        document.write(nome + ' possui índice de massa corporal igual a ' + m + ' sendo classificado como ' + classificacao)
         
     </script>
 </head>
