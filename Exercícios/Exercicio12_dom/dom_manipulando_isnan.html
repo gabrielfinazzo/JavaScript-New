@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM isNan</title>
+    <script>
+        function caracterDigitado() {
+            var caracter = document.getElementById('entrada').value
+
+            document.getElementById('entrada').value = ''
+
+            caracter.trim()
+
+            if (isNaN(caracter/1) === true) {
+                document.getElementById('letras_apenas').value += caracter
+            } else {
+                document.getElementById('numeros_apenas').value += caracter
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" onkeyup="caracterDigitado()" id="entrada">
+    <hr>
+    <span>Letras:</span>
+    <input type="text" id="letras_apenas" disabled="disabled">
+    <span>Números:</span>
+    <input type="text" id="numeros_apenas" disabled="disabled">
+</body>
+</html>

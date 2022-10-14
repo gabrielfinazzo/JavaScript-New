@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulando</title>
+    <script>
+        function distribuirCaracter() {
+
+            // Atribuir valor a variável caracter
+            var caracter = document.getElementById('entrada').value
+
+            //Remover o caracter digitado do input entrada
+            document.getElementById('entrada').value = ''
+            console.log(caracter)
+
+
+            //Limpar os espaços no início e no fim
+            caracter.trim()
+            
+            // Executar a condição utilizando if/else
+            if (caracter >= 0 && caracter <=9) {
+                document.getElementById('apenas_numeros').value += caracter
+            } else {
+                document.getElementById('apenas_letras').value += caracter
+            }
+        }
+    </script>
+</head>
+<body>
+    <input onkeyup="distribuirCaracter()" type="text" id="entrada" placeholder="Digite o caracter aqui">
+    <hr>
+    <span>Letras:</span>
+    <input type="text" id="apenas_letras" disabled="disabled">
+    <span>Números:</span>
+    <input type="text" id="apenas_numeros" disabled="disabled">
+</body>
+</html>
