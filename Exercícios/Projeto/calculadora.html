@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <input id="resultado" type="text" placeholder="0" disabled="disabled">
+            <div>
+                <button type="button" class="esticado" onclick="calcular('acao', 'C')">C</button>
+                <button type="button" class="simples" onclick="calcular('acao', '/')">/</button>
+                <button type="button" class="simples" onclick="calcular('acao', '*')">X</button>
+            </div>
+            <div>
+                <button type="button" class="simples" onclick="calcular('valor', 7)">7</button>
+                <button type="button" class="simples" onclick="calcular('valor', 8)">8</button>
+                <button type="button" class="simples" onclick="calcular('valor', 9)">9</button>
+                <button type="button" class="simples" onclick="calcular('acao', '-')">-</button>
+            </div>
+            <div>
+                <button type="button" class="simples" onclick="calcular('valor', 4)">4</button>
+                <button type="button" class="simples" onclick="calcular('valor', 5)">5</button>
+                <button type="button" class="simples" onclick="calcular('valor', 6)">6</button>
+                <button type="button" class="simples" onclick="calcular('acao', '+')">+</button>
+            </div>
+            <div class="menores">
+                <div class="divmenor">
+                    <button type="button" class="simples" onclick="calcular('valor', 1)">1</button>
+                    <button type="button" class="simples" onclick="calcular('valor', 2)">2</button>
+                    <button type="button" class="simples" onclick="calcular('valor', 3)">3</button>
+                </div>
+                <div class="divmenor">
+                    <button type="button" class="esticado " onclick="calcular('valor', 0)">0</button>
+                    <button type="button" class="simples" onclick="calcular('acao', '.')">. </button>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="igual" onclick="calcular('acao', '=')">=</button>
+            </div>
+            
+        </div>
+        
+    </main>
+    <script>
+        function calcular(tipo, valor) {
+            if (tipo === 'acao') {
+                if (valor === 'C') {
+                    document.getElementById('resultado').value = ''
+                }
+                if (valor === '/' || valor === '*' || valor === '-' || valor === '+' || valor === '.') {
+                    document.getElementById('resultado').value += valor
+                }
+                if (valor === '=') {
+                    var valor_campo = eval(document.getElementById('resultado').value)
+                    document.getElementById('resultado').value = valor_campo
+                }
+            } else if (tipo === 'valor') {
+                document.getElementById('resultado').value += valor
+            }
+        }
+    </script>
+</body>
+</html>
